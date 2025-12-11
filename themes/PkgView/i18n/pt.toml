@@ -6,3 +6,7 @@ other = "// Mantenedor"
 other = "// Tempo de CPU: {{ .Count }} min"
 [lang_var]
 other = "LANG="
+[nav_posts]
+other = "Posts"
+[nav_about]
+other = "Sobre"

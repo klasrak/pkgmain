@@ -300,44 +300,13 @@ a:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Buffer Area - Line numbers + Content */
-.vim-buffer-area {
-    display: flex;
-    min-height: 60vh;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-/* Line Numbers Column */
-.vim-linenr-col {
-    background-color: #252526;
-    color: #858585;
-    padding: 0.75rem 0;
-    text-align: right;
-    user-select: none;
-    flex-shrink: 0;
-    min-width: 3rem;
-    border-right: 1px solid #3c3c3c;
-}
-
-[data-theme="light"] .vim-linenr-col {
-    background-color: #f0f0f0;
-    color: #999;
-    border-right-color: #d0d0d0;
-}
-
-.vim-nr {
-    padding: 0 0.75rem 0 0.5rem;
-    height: 1.5em;
-    font-size: 0.85rem;
-}
-
-/* Text/Content Area */
+/* Text/Content Area - Single column without line numbers */
 .vim-text-area {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    overflow-x: auto;
+    padding: 1rem 1.25rem;
     color: #d4d4d4;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 [data-theme="light"] .vim-text-area {
@@ -694,20 +663,6 @@ a:hover {
         border-radius: 6px;
     }
 
-    .vim-buffer-area {
-        min-height: 50vh;
-        max-height: 70vh;
-    }
-
-    .vim-linenr-col {
-        min-width: 2.5rem;
-    }
-
-    .vim-nr {
-        padding: 0 0.5rem 0 0.25rem;
-        font-size: 0.75rem;
-    }
-
     .vim-text-area {
         padding: 0.75rem;
     }
@@ -817,11 +772,6 @@ a:hover {
         padding: 0.3rem 0.4rem;
     }
 
-    /* Hide line numbers on very small screens */
-    .vim-linenr-col {
-        display: none;
-    }
-
     .vim-window {
         font-size: 0.8rem;
         border-width: 1px;
@@ -929,7 +879,6 @@ a:hover {
 
     .theme-toggle,
     .lang-switch,
-    .vim-linenr-col,
     .vim-status,
     .vim-cmdline {
         display: none !important;

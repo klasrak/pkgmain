@@ -4,15 +4,7 @@
 <div class="vim-wrapper">
 {{/* Vim Window */}}
 <div class="vim-window">
-{{/* Buffer Area with Line Numbers */}}
-<div class="vim-buffer-area">
-{{/* Line Numbers Column */}}
-<div class="vim-linenr-col">
-    {{- range seq 1 (add $lineCount 10) }}
-    <div class="vim-nr">{{ . }}</div>
-    {{- end }}
-</div>
-{{/* Content Area */}}
+{{/* Content Area - No line numbers for rendered content */}}
 <div class="vim-text-area">
 {{/* File header - Title */}}
 <div class="vim-line-row vim-title">
@@ -31,9 +23,10 @@
 {{/* Content */}}
 <div class="vim-content-body">{{ .Content }}</div>
 {{/* Empty lines at end (like vim buffer) */}}
-<div class="vim-line-row vim-tilde">~</div>
-<div class="vim-line-row vim-tilde">~</div>
-<div class="vim-line-row vim-tilde">~</div>
+<div class="vim-tilde-section">
+    <div class="vim-line-row vim-tilde">~</div>
+    <div class="vim-line-row vim-tilde">~</div>
+    <div class="vim-line-row vim-tilde">~</div>
 </div>
 </div>
 {{/* Status Line */}}

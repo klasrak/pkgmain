@@ -182,20 +182,6 @@ a:hover {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-    .file-row {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .col-perm,
-    .col-user,
-    .col-group,
-    .col-size {
-        display: none;
-    }
-}
 
 /* Single Post */
 .post-header {
@@ -277,13 +263,6 @@ a:hover {
     opacity: 0.5;
 }
 
-@media (max-width: 768px) {
-    .lang-switch {
-        display: block;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-}
 
 /* ============================================
    VIM BUFFER STYLES
@@ -551,8 +530,166 @@ a:hover {
     color: #999;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
+/* ============================================
+   RESPONSIVE DESIGN
+   Breakpoints:
+   - Mobile small:  < 480px
+   - Mobile large:  480px - 767px
+   - Tablet:        768px - 1023px
+   - Desktop:       1024px - 1279px
+   - Desktop HD:    1280px - 1919px
+   - Desktop 2K+:   >= 1920px
+   ============================================ */
+
+/* ========== DESKTOP 2K+ (1920px+) ========== */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .vim-window {
+        font-size: 1rem;
+    }
+
+    .vim-title .vim-comment {
+        font-size: 1.7rem;
+    }
+}
+
+/* ========== DESKTOP HD (1280px - 1919px) ========== */
+@media (min-width: 1280px) and (max-width: 1919px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+/* ========== TABLET (768px - 1023px) ========== */
+@media (max-width: 1023px) {
+    .container {
+        max-width: 100%;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .pkg-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        margin-left: 0.75rem;
+    }
+
+    .lang-switch {
+        margin-left: 1rem;
+    }
+
+    .vim-title .vim-comment {
+        font-size: 1.3rem;
+    }
+
+    .vim-content-body h1 {
+        font-size: 1.4rem;
+    }
+
+    .vim-content-body h2 {
+        font-size: 1.2rem;
+    }
+
+    .vim-content-body h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========== MOBILE LARGE (480px - 767px) ========== */
+@media (max-width: 767px) {
+    .container {
+        padding: 1rem;
+    }
+
+    /* Header - Stack vertically */
+    .pkg-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Keep lang-switch and theme-toggle together */
+    .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 0;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .theme-toggle {
+        margin-left: 0.5rem;
+        padding: 0.3rem 0.45rem;
+        font-size: 0.9rem;
+    }
+
+    /* Terminal List */
+    .file-row {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .col-perm,
+    .col-meta:not(.col-date) {
+        display: none;
+    }
+
+    .col-size {
+        display: none;
+    }
+
+    .col-date {
+        font-size: 0.8rem;
+    }
+
+    .col-name a {
+        font-size: 0.95rem;
+    }
+
+    /* Vim Buffer */
+    .vim-window {
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+
+    .vim-buffer-area {
+        min-height: 50vh;
+        max-height: 70vh;
+    }
+
     .vim-linenr-col {
         min-width: 2.5rem;
     }
@@ -563,16 +700,238 @@ a:hover {
     }
 
     .vim-text-area {
-        padding: 0.5rem 0.75rem;
+        padding: 0.75rem;
     }
 
+    .vim-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .vim-title .vim-comment {
+        font-size: 1.15rem;
+    }
+
+    .vim-comment {
+        font-size: 0.8rem;
+    }
+
+    .vim-content-body h1 {
+        font-size: 1.3rem;
+    }
+
+    .vim-content-body h2 {
+        font-size: 1.15rem;
+    }
+
+    .vim-content-body h3 {
+        font-size: 1.05rem;
+    }
+
+    .vim-content-body p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .vim-content-body pre {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .vim-content-body code {
+        font-size: 0.85em;
+    }
+
+    /* Status Bar */
     .vim-status {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 0.25rem;
-        text-align: center;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .vim-status-left,
+    .vim-status-right {
+        gap: 0.5rem;
+    }
+
+    .vim-status-right span:nth-child(n+3) {
+        display: none;
+    }
+
+    .vim-status-sep {
+        display: none;
+    }
+
+    .vim-cmdline {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Footer */
+    .pkg-footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .pkg-footer p {
+        line-height: 1.8;
+    }
+}
+
+/* ========== MOBILE SMALL (< 480px) ========== */
+@media (max-width: 479px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .cursor {
+        width: 8px;
+        height: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .lang-switch {
+        font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    /* Hide line numbers on very small screens */
+    .vim-linenr-col {
+        display: none;
+    }
+
+    .vim-window {
+        font-size: 0.8rem;
+        border-width: 1px;
+    }
+
+    .vim-text-area {
+        padding: 0.5rem;
+    }
+
+    .vim-title {
+        font-size: 1rem;
+    }
+
+    .vim-title .vim-comment {
+        font-size: 1rem;
+    }
+
+    .vim-line-row {
+        font-size: 0.75rem;
+    }
+
+    .vim-content-body {
+        font-size: 0.9rem;
+    }
+
+    .vim-content-body h1 {
+        font-size: 1.2rem;
+    }
+
+    .vim-content-body h2 {
+        font-size: 1.1rem;
+    }
+
+    .vim-content-body h3 {
+        font-size: 1rem;
+    }
+
+    .vim-content-body p {
+        font-size: 0.9rem;
+    }
+
+    .vim-content-body pre {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .vim-content-body ul,
+    .vim-content-body ol {
+        padding-left: 1rem;
+    }
+
+    /* Status Bar - Minimal view */
+    .vim-status {
+        justify-content: center;
+    }
+
+    .vim-status-left {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .vim-status-right {
+        display: none;
+    }
+
+    .vim-status-file {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Footer even more compact */
+    .pkg-footer {
         font-size: 0.7rem;
+    }
+
+    .pkg-footer .prompt {
+        display: none;
+    }
+}
+
+/* ========== TOUCH DEVICE ENHANCEMENTS ========== */
+@media (hover: none) and (pointer: coarse) {
+    .theme-toggle {
+        padding: 0.5rem 0.7rem;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        padding: 0.25rem 0;
+    }
+
+    .lang-link {
+        padding: 0.25rem;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+
+    .theme-toggle,
+    .lang-switch,
+    .vim-linenr-col,
+    .vim-status,
+    .vim-cmdline {
+        display: none !important;
+    }
+
+    .vim-window {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .pkg-footer {
+        margin-top: 2rem;
     }
 }

@@ -203,6 +203,10 @@ a:hover {
     text-align: center;
 }
 
+.highlight-link {
+    color: var(--link-color);
+}
+
 /* I18n Switcher Styles */
 .lang-switch {
     margin-left: 2rem;

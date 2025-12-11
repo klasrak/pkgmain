@@ -354,6 +354,28 @@ a:hover {
     }
 }
 
+/* Title Row */
+.vim-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.vim-title .vim-comment {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.vim-keyword {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.vim-paren,
+.vim-brace {
+    color: var(--meta-color);
+}
+
 /* Content Body */
 .vim-content-body {
     margin-top: 1rem;

@@ -1,5 +1,13 @@
 name = "PkgView"
 license = "MIT"
-description = "Um tema brutalista técnico focado em Go e documentação."
-tags = ["blog", "minimal", "dark-mode", "technical", "go"]
+description = "A brutalist theme for developers and their code"
+tags = [
+    "blog",
+    "minimal",
+    "dark-mode",
+    "technical",
+    "vim",
+    "vimlike",
+    "vim-style",
+]
 min_version = "0.152.0"

@@ -7,18 +7,27 @@
     </div>
     <div class="file-list">
         {{ range .Pages }}
-        <div class="file-row">
-            <span class="col-perm">-rw-r--r--</span>
-            <span class="col-meta">compiler</span>
-            <span class="col-meta">users</span>
-            <span class="col-size">{{ .WordCount }}b</span>
-            <span class="col-meta col-date">{{ .Date.Format "Jan 02" }}</span>
-            <span class="col-name"><a href="{{ .RelPermalink }}">{{ .Title }}.md</a></span>
-        </div>
-        {{ end }}
-        <div class="cmd-line cmd-line-bottom">
-            <span class="prompt">root@pkgmain:{{ $promptPath }}$</span> <span class="cursor"></span>
-        </div>
-    </div>
+        {{- $isSection := .IsSection -}}
+        {{- $isDir := or $isSection (gt (len .Pages) 0) -}}
+        <div class="file-row{{ if $isDir }} file-row-dir{{ end }}">
+        {{/* Permissions: drwxr-xr-x for dirs, -rw-r--r-- for files */}}
+        <span class="col-perm">{{ if $isDir }}drwxr-xr-x{{ else }}-rw-r--r--{{ end }}</span>
+        <span class="col-meta">compiler</span>
+        <span class="col-meta">users</span>
+    {{/* Size: show child count for dirs, word count for files */}}
+    <span class="col-size">{{ if $isDir }}{{ len .Pages }}{{ else }}{{ .WordCount }}b{{ end }}</span>
+    <span class="col-meta col-date">{{ .Date.Format "Jan 02" }}</span>
+{{/* Name: dirname/ for dirs, filename.md for files */}}
+<span class="col-name">
+    <a href="{{ .RelPermalink }}" class="{{ if $isDir }}dir-link{{ end }}">
+    {{- .Title | urlize -}}{{- if $isDir }}/{{ else }}.md{{ end -}}
+    </a>
+</span>
+</div>
+{{ end }}
+<div class="cmd-line cmd-line-bottom">
+    <span class="prompt">root@pkgmain:{{ $promptPath }}$</span> <span class="cursor"></span>
+</div>
+</div>
 </div>
 {{ end }}

@@ -1,15 +1,56 @@
 {{ define "main" }}
-<article class="post">
-    <header class="post-header">
-        <h1 class="post-title">{{ .Title }}</h1>
-        <div class="post-meta">
-            <span>{{ T "date_label" }}: {{ .Date.Format "2006-01-02" }}</span>
-            <br>
-            <span>{{ T "author_label" }}: {{ site.Params.author.name }}</span>
-            <br>
-            <span>{{ T "read_time" .ReadingTime }}</span>
-        </div>
-    </header>
-    <div class="content">{{ .Content }}</div>
-</article>
+{{- $filename := .File.LogicalName | default (printf "%s.md" (.Title | urlize)) -}}
+{{- $lineCount := len (split .RawContent "\n") -}}
+<div class="vim-wrapper">
+{{/* Vim Window */}}
+<div class="vim-window">
+{{/* Buffer Area with Line Numbers */}}
+<div class="vim-buffer-area">
+{{/* Line Numbers Column */}}
+<div class="vim-linenr-col">
+    {{- range seq 1 (add $lineCount 10) }}
+    <div class="vim-nr">{{ . }}</div>
+    {{- end }}
+</div>
+{{/* Content Area */}}
+<div class="vim-text-area">
+{{/* File header as comment */}}
+<div class="vim-line-row">
+    <span class="vim-comment">// {{ .Title }}</span>
+</div>
+<div class="vim-line-row">
+    <span class="vim-comment">// {{ T "author_label" }}: {{ site.Params.author.name }} | {{ .Date.Format "2006-01-02" }} | {{ T "read_time" .ReadingTime }}</span>
+</div>
+<div class="vim-line-row vim-empty"></div>
+{{/* Content */}}
+<div class="vim-content-body">{{ .Content }}</div>
+{{/* Empty lines at end (like vim buffer) */}}
+<div class="vim-line-row vim-tilde">~</div>
+<div class="vim-line-row vim-tilde">~</div>
+<div class="vim-line-row vim-tilde">~</div>
+</div>
+</div>
+{{/* Status Line */}}
+<div class="vim-status">
+    <div class="vim-status-left">
+        <span class="vim-status-mode">NORMAL</span>
+        <span class="vim-status-file">{{ $filename }}</span>
+        <span class="vim-status-modified"></span>
+    </div>
+    <div class="vim-status-right">
+        <span>{{ .WordCount }} words</span>
+        <span class="vim-status-sep">│</span>
+        <span>utf-8</span>
+        <span class="vim-status-sep">│</span>
+        <span>markdown</span>
+        <span class="vim-status-sep">│</span>
+        <span>1:1</span>
+    </div>
+</div>
+{{/* Command Line */}}
+<div class="vim-cmdline">
+    <span class="vim-cmd-text">"{{ $filename }}" {{ $lineCount }}L, {{ len .RawContent }}B</span>
+</div>
+</div>
+</div>
 {{ end }}

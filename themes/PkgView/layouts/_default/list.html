@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="terminal-list">
+    <div class="cmd-line">
+        <span class="prompt">root@pkgmain:~/posts$</span> <span class="func">ls</span> -l --sort=time
+    </div>
+    <div class="file-list">
+        {{ range .Pages }}
+        <div class="file-row">
+            <span class="col-perm">-rw-r--r--</span>
+            <span class="col-meta">compiler</span>
+            <span class="col-meta">users</span>
+            <span class="col-size">{{ .WordCount }}b</span>
+            <span class="col-meta col-date">{{ .Date.Format "Jan 02" }}</span>
+            <span class="col-name"><a href="{{ .RelPermalink }}">{{ .Title | urlize }}.md</a></span>
+        </div>
+        {{ end }}
+        <div class="cmd-line" style="margin-top: 1rem;">
+            <span class="prompt">root@pkgmain:~/posts$</span> <span class="cursor"></span>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,5 @@
+name = "PkgView"
+license = "MIT"
+description = "Um tema brutalista técnico focado em Go e documentação."
+tags = ["blog", "minimal", "dark-mode", "technical", "go"]
+min_version = "0.152.0"

@@ -1,0 +1,17 @@
+baseURL = 'https://pkgmain.dev'
+languageCode = 'pt-br'
+title = 'package main_'
+theme = 'PkgView'
+
+[module]
+  [module.hugoVersion]
+    min = "0.152.0" # Enforcing Hugo 152+ features
+    extended = true
+
+[params]
+  description = "Opiniões estaticamente tipadas e compiladas nativamente."
+
+[author]
+  name = "The Compiler"
+  email = "sigkill@pkgmain.dev"
+  bio = "Eu não discuto, eu aborto o build."

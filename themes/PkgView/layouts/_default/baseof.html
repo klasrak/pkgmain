@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+              content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+        <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    </head>
+    <body>
+        <div class="container">
+            <header class="pkg-header">
+                <a href="{{ site.Home.RelPermalink }}" class="logo-text">
+                    <span class="kwd">package</span> <span class="func">main</span><span class="cursor"></span>
+                </a>
+                <nav class="nav-links">
+                    <a href="{{ site.Home.RelPermalink }}posts">[ Posts ]</a>
+                    <a href="{{ site.Home.RelPermalink }}about">[ Sobre ]</a>
+                </nav>
+            </header>
+            <main>
+                {{ block "main" . }}{{ end }}
+            </main>
+            <footer class="pkg-footer">
+                <p>
+                    <span class="prompt">root@pkgmain:~$</span> {{ now.Year }} | Author: {{ site.Params.author.name }} | Built with Go & Hate
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

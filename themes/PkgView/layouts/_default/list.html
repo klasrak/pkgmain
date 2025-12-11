@@ -20,7 +20,7 @@
 {{/* Name: dirname/ for dirs, filename.md for files */}}
 <span class="col-name">
     <a href="{{ .RelPermalink }}" class="{{ if $isDir }}dir-link{{ end }}">
-    {{- .Title | urlize -}}{{- if $isDir }}/{{ else }}.md{{ end -}}
+    {{- .Title -}}{{- if $isDir }}/{{ else }}.md{{ end -}}
     </a>
 </span>
 </div>

@@ -19,7 +19,7 @@ the_compiler [OPTIONS] <arquivo_fonte.go>
 
 Cada nil pointer esperando para crashar às 3 da manhã, cada type mismatch escondido à vista de todos, cada erro esquecido que você se recusou a tratar—eu vejo todos antes do primeiro byte tocar o silício. Em Go, não existem surpresas em runtime. Apenas verdades em tempo de compilação.
 
-Eu não discuto, eu aborto o build.
+Eu leio cada linha que você escreve. Eu lembro de cada erro que você comete. E diferente dos seus testes, eu nunca minto.
 
 ## OPTIONS
 

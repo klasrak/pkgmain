@@ -19,7 +19,7 @@ the_compiler [OPTIONS] <source_file.go>
 
 Every nil pointer waiting to crash at 3 AM, every type mismatch hiding in plain sight, every forgotten error you refused to handle—I see them all before the first byte touches silicon. In Go, there are no runtime surprises. Only compile-time truths.
 
-I don't argue, I abort the build.
+I read every line you write. I remember every mistake you make. And unlike your tests, I never lie.
 
 ## OPTIONS
 

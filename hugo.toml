@@ -1,8 +1,8 @@
 baseURL = 'https://pkgmain.dev'
-languageCode = 'pt-br'
+languageCode = 'en-us'
 title = 'package main_'
 theme = 'PkgView'
-defaultContentLanguage = 'pt'
+defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 
 [module]
@@ -39,7 +39,7 @@ description = "Opiniones estáticamente tipadas."
 bio = "No discuto, aborto la compilación."
 
 [params]
-keywords = ["Go", "Golang", "programação", "backend", "software", "blog"]
+keywords = ["Go", "Golang", "programming", "backend", "software", "blog"]
 
 [params.author]
 name = "The Compiler"

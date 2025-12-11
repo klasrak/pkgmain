@@ -2,6 +2,7 @@
 title: "Prueba de Localización"
 date: 2025-12-10
 description: "Una publicación de prueba para verificar la funcionalidad de i18n."
+layout: "single"
 ---
 
 ## ¡Hola, Mundo!

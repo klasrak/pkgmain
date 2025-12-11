@@ -2,6 +2,7 @@
 title: "Localization Test"
 date: 2025-12-10
 description: "A test post to verify i18n functionality."
+layout: "single"
 ---
 
 ## Hello, World!

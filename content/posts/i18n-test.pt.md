@@ -2,6 +2,7 @@
 title: "Teste de Localização"
 date: 2025-12-10
 description: "Um post de teste para verificar a funcionalidade de i18n."
+layout: "single"
 ---
 
 ## Olá, Mundo!

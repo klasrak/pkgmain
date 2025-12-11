@@ -4,14 +4,15 @@ title = 'package main_'
 theme = 'PkgView'
 
 [module]
-  [module.hugoVersion]
-    min = "0.152.0" # Enforcing Hugo 152+ features
-    extended = true
+[module.hugoVersion]
+min = "0.152.0" # Enforcing Hugo 152+ features
+extended = true
 
 [params]
-  description = "Opiniões estaticamente tipadas e compiladas nativamente."
+description = "Opiniões estaticamente tipadas e compiladas nativamente."
+keywords = ["Go", "Golang", "programação", "backend", "software", "blog"]
 
 [author]
-  name = "The Compiler"
-  email = "sigkill@pkgmain.dev"
-  bio = "Eu não discuto, eu aborto o build."
+name = "The Compiler"
+email = "sigkill@pkgmain.dev"
+bio = "Eu não discuto, eu aborto o build."

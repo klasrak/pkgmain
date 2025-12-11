@@ -19,7 +19,13 @@
     <span class="vim-comment">// {{ .Title }}</span>
 </div>
 <div class="vim-line-row">
-    <span class="vim-comment">// {{ T "author_label" }}: {{ site.Params.author.name }} | {{ .Date.Format "2006-01-02" }} | {{ T "read_time" .ReadingTime }}</span>
+    <span class="vim-comment">// {{ T "author_label" }}: {{ site.Params.author.name }}</span>
+</div>
+<div class="vim-line-row">
+    <span class="vim-comment">// {{ T "date_label" }}: {{ .Date.Format "2006-01-02" }}</span>
+</div>
+<div class="vim-line-row">
+    <span class="vim-comment">// {{ T "read_time" .ReadingTime }}</span>
 </div>
 <div class="vim-line-row vim-empty"></div>
 {{/* Content */}}

@@ -1,7 +1,9 @@
 {{ define "main" }}
+{{- $section := .Section -}}
+{{- $promptPath := cond (eq $section "") "~" (printf "~/%s" $section) -}}
 <div class="terminal-list">
     <div class="cmd-line">
-        <span class="prompt">root@pkgmain:~/posts$</span> <span class="func">ls</span> -lt
+        <span class="prompt">root@pkgmain:{{ $promptPath }}$</span> <span class="func">ls</span> -lt
     </div>
     <div class="file-list">
         {{ range .Pages }}
@@ -15,7 +17,7 @@
         </div>
         {{ end }}
         <div class="cmd-line cmd-line-bottom">
-            <span class="prompt">root@pkgmain:~/posts$</span> <span class="cursor"></span>
+            <span class="prompt">root@pkgmain:{{ $promptPath }}$</span> <span class="cursor"></span>
         </div>
     </div>
 </div>

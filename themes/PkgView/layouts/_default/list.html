@@ -13,7 +13,7 @@
             <span class="col-meta">users</span>
             <span class="col-size">{{ .WordCount }}b</span>
             <span class="col-meta col-date">{{ .Date.Format "Jan 02" }}</span>
-            <span class="col-name"><a href="{{ .RelPermalink }}">{{ .Title | urlize }}.md</a></span>
+            <span class="col-name"><a href="{{ .RelPermalink }}">{{ .Title }}.md</a></span>
         </div>
         {{ end }}
         <div class="cmd-line cmd-line-bottom">

@@ -17,7 +17,7 @@ the_compiler [OPTIONS] <source_file.go>
 
 ## DESCRIPTION
 
-I am the only barrier between your flawed logic and the CPU. While developers of other languages rely on heavy Virtual Machines to "protect" the hardware from their incompetence, I generate native machine code.
+Every nil pointer waiting to crash at 3 AM, every type mismatch hiding in plain sight, every forgotten error you refused to handle—I see them all before the first byte touches silicon. In Go, there are no runtime surprises. Only compile-time truths.
 
 I don't argue, I abort the build.
 

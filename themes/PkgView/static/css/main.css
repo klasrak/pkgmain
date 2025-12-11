@@ -1,5 +1,18 @@
 :root {
-    /* Light Mode */
+    /* Dark Mode (Default) */
+    --bg-color: #1E1E1E;
+    --text-color: #E1E1E1;
+    --link-color: #00ADD8;
+    --accent-color: #6A9955;
+    --meta-color: #888;
+    --border-color: #333;
+    --code-bg: #2d2d2d;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Light Mode */
+[data-theme="light"] {
     --bg-color: #F8F9FA;
     --text-color: #1E1E1E;
     --link-color: #007d9c;
@@ -7,21 +20,43 @@
     --meta-color: #666;
     --border-color: #d0d7de;
     --code-bg: #e1e4e8;
-    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-    --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1E1E1E;
-        --text-color: #E1E1E1;
-        --link-color: #00ADD8;
-        /* Go Gopher Blue */
-        --accent-color: #6A9955;
-        --meta-color: #888;
-        --border-color: #333;
-        --code-bg: #2d2d2d;
-    }
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-left: 1rem;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--code-bg);
+    border-color: var(--link-color);
+}
+
+/* Show sun in dark mode, moon in light mode */
+#theme-icon-light {
+    display: inline;
+    color: #FFD700;
+}
+
+#theme-icon-dark {
+    display: none;
+    color: var(--link-color);
+}
+
+[data-theme="light"] #theme-icon-light {
+    display: none;
+}
+
+[data-theme="light"] #theme-icon-dark {
+    display: inline;
 }
 
 body {
@@ -271,12 +306,10 @@ a:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-window {
-        background-color: #fafafa;
-        border-color: #d0d0d0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+[data-theme="light"] .vim-window {
+    background-color: #fafafa;
+    border-color: #d0d0d0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Buffer Area - Line numbers + Content */
@@ -299,12 +332,10 @@ a:hover {
     border-right: 1px solid #3c3c3c;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-linenr-col {
-        background-color: #f0f0f0;
-        color: #999;
-        border-right-color: #d0d0d0;
-    }
+[data-theme="light"] .vim-linenr-col {
+    background-color: #f0f0f0;
+    color: #999;
+    border-right-color: #d0d0d0;
 }
 
 .vim-nr {
@@ -321,10 +352,8 @@ a:hover {
     color: #d4d4d4;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-text-area {
-        color: #1e1e1e;
-    }
+[data-theme="light"] .vim-text-area {
+    color: #1e1e1e;
 }
 
 .vim-line-row {
@@ -348,10 +377,8 @@ a:hover {
     font-style: italic;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-comment {
-        color: #008000;
-    }
+[data-theme="light"] .vim-comment {
+    color: #008000;
 }
 
 /* Title Row */
@@ -410,10 +437,8 @@ a:hover {
     color: #d4d4d4;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-content-body p {
-        color: #333;
-    }
+[data-theme="light"] .vim-content-body p {
+    color: #333;
 }
 
 .vim-content-body a {
@@ -428,11 +453,9 @@ a:hover {
     color: #ce9178;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-content-body code {
-        background-color: #f0f0f0;
-        color: #a31515;
-    }
+[data-theme="light"] .vim-content-body code {
+    background-color: #f0f0f0;
+    color: #a31515;
 }
 
 .vim-content-body pre {
@@ -444,10 +467,8 @@ a:hover {
     border-left: 3px solid var(--link-color);
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-content-body pre {
-        background-color: #f5f5f5;
-    }
+[data-theme="light"] .vim-content-body pre {
+    background-color: #f5f5f5;
 }
 
 .vim-content-body blockquote {
@@ -484,10 +505,8 @@ a:hover {
     font-weight: 500;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-status {
-        background: linear-gradient(to bottom, #0078d4, #005a9e);
-    }
+[data-theme="light"] .vim-status {
+    background: linear-gradient(to bottom, #0078d4, #005a9e);
 }
 
 .vim-status-left,
@@ -522,12 +541,10 @@ a:hover {
     border-top: 1px solid #3c3c3c;
 }
 
-@media (prefers-color-scheme: light) {
-    .vim-cmdline {
-        background-color: #fafafa;
-        color: #333;
-        border-top-color: #d0d0d0;
-    }
+[data-theme="light"] .vim-cmdline {
+    background-color: #fafafa;
+    color: #333;
+    border-top-color: #d0d0d0;
 }
 
 .vim-cmd-text {

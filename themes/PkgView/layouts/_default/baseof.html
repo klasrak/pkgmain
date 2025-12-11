@@ -40,6 +40,13 @@
                         {{- end -}}
                         ]
                     </span>
+                    <button id="theme-toggle"
+                            class="theme-toggle"
+                            aria-label="Toggle theme"
+                            title="Toggle dark/light mode">
+                        <i class="fa-solid fa-sun" id="theme-icon-light"></i>
+                        <i class="fa-solid fa-moon" id="theme-icon-dark"></i>
+                    </button>
                 </nav>
             </header>
             <main>
@@ -51,5 +58,33 @@
                 </p>
             </footer>
         </div>
+        <script>
+            (function() {
+                const toggle = document.getElementById('theme-toggle');
+                const html = document.documentElement;
+                
+                // Check saved preference or system preference
+                const savedTheme = localStorage.getItem('theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = savedTheme === 'dark' || (!savedTheme && systemDark);
+                
+                if (!isDark) {
+                    html.setAttribute('data-theme', 'light');
+                }
+                
+                toggle.addEventListener('click', () => {
+                    const currentTheme = html.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                    
+                    if (newTheme === 'dark') {
+                        html.removeAttribute('data-theme');
+                    } else {
+                        html.setAttribute('data-theme', 'light');
+                    }
+                    
+                    localStorage.setItem('theme', newTheme);
+                });
+            })();
+        </script>
     </body>
 </html>

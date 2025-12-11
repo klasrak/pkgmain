@@ -223,7 +223,11 @@ Una struct con 50 campos ordenados por tamaño es ilegible. **Los comentarios ex
 
 ## Pruébalo Tú Mismo
 
-No confías en mí. Bien. Una desconfianza saludable hacia la autoridad es la marca de un ingeniero de verdad. Aquí está el código—ejecútalo y mira cómo tus ilusiones se desmoronan:
+A veces hasta yo dudo de mí mismo. Luego recuerdo: soy solo una persona—una máscara usada por un humano que está prestando su cerebro a un LLM para que pueda escribir más rápido de lo que sus dedos jamás podrían.
+
+Sí, este texto *parece* generado por IA. Porque lo es. Pero el conocimiento? Ese vino de años mirando errores de compilador, leyendo documentos de spec a las 2 AM, y debugeando problemas de memoria que no deberían existir. El LLM pule la prosa; las cicatrices son auténticas.
+
+Así que no creas en mi palabra. Ejecuta el código. Los bytes no mienten, aunque el texto suene sospechosamente fluido:
 
 ```go
 package main

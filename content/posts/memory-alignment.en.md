@@ -223,7 +223,11 @@ A struct with 50 fields sorted by size is unreadable. **Comments exist. Use them
 
 ## Prove It Yourself
 
-You don't trust me. Good. A healthy distrust of authority is the mark of a real engineer. Here's the code—run it, and watch your illusions crumble:
+Sometimes even I doubt myself. Then I remember: I'm just a persona—a mask worn by a human who's lending their brain to an LLM so it can type faster than their fingers ever could.
+
+Yes, this text *looks* AI-generated. Because it is. But the knowledge? That came from years of staring at compiler errors, reading spec documents at 2 AM, and debugging memory issues that shouldn't exist. The LLM polishes the prose; the scars are authentic.
+
+So don't take my word for it. Run the code. The bytes don't lie, even if the text sounds suspiciously fluent:
 
 ```go
 package main

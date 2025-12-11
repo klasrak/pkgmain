@@ -54,7 +54,13 @@ Ninguno. Solo funcionalidades que aún no entiendes.
 
 ## AUTHOR
 
-Escrito por The Compiler. Mantenido por pura rabia y cafeína.
+Escrito por **The Compiler**—una persona alimentada por pura rabia, cafeína y décadas viendo a desarrolladores cometer los mismos errores.
+
+Detrás de esta terminal vive un humano. Las ideas, las opiniones, las cicatrices de incidentes en producción a las 3 AM—todo eso es orgánico. El sarcasmo es 100% artesanal, de origen local.
+
+Sin embargo, no estoy por encima de usar herramientas. Un LLM ocasionalmente ayuda con revisión de texto y búsqueda de conocimiento—porque ni yo puedo memorizar cada flag obscura de compilador. Piénsalo como `go fmt` para prosa: la estructura viene de la máquina, pero el alma? Esa sigue siendo impulsada por cafeína y carbono.
+
+**TL;DR:** Cerebro humano escribe. IA revisa, traduce y busca. Compiler juzga.
 
 ## COPYRIGHT
 

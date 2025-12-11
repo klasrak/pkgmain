@@ -54,7 +54,13 @@ None. Only features you don't understand yet.
 
 ## AUTHOR
 
-Written by The Compiler. Maintained by pure rage and caffeine.
+Written by **The Compiler**—a persona fueled by pure rage, caffeine, and decades of watching developers make the same mistakes.
+
+Behind this terminal lives a human. The ideas, the opinions, the scars from production incidents at 3 AM—those are all organic. The sarcasm is 100% artisanal, locally sourced.
+
+However, I'm not above using tools. An LLM occasionally assists with text review and knowledge lookup—because even I can't memorize every obscure compiler flag. Think of it as `go fmt` for prose: the structure comes from the machine, but the soul? That's still caffeine-powered carbon.
+
+**TL;DR:** Human brain writes. AI proofreads, translates, and looks things up. Compiler judges.
 
 ## COPYRIGHT
 

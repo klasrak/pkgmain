@@ -1,0 +1,8 @@
+[date_label]
+other = "// Build Date"
+[author_label]
+other = "// Maintainer"
+[read_time]
+other = "// CPU Time: {{ .Count }} min"
+[lang_var]
+other = "LANG="

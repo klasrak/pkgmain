@@ -23,6 +23,18 @@
                 <nav class="nav-links">
                     <a href="{{ site.Home.RelPermalink }}posts">[ Posts ]</a>
                     <a href="{{ site.Home.RelPermalink }}about">[ Sobre ]</a>
+                    <span class="lang-switch">
+                        <span class="kwd">{{ T "lang_var" }}</span>[
+                        {{- range $i, $t := .AllTranslations -}}
+                        {{- if eq $t.Lang $.Lang -}}
+                        <span class="lang-active">{{ $t.Language.LanguageName }}</span>
+                        {{- else -}}
+                        <a href="{{ $t.RelPermalink }}" class="lang-link">{{ $t.Language.LanguageName }}</a>
+                        {{- end -}}
+                        {{- if ne $i (sub (len $.AllTranslations) 1) -}}<span class="separator">|</span>{{- end -}}
+                        {{- end -}}
+                        ]
+                    </span>
                 </nav>
             </header>
             <main>

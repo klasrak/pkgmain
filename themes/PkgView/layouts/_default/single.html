@@ -3,11 +3,11 @@
     <header class="post-header">
         <h1 class="post-title">{{ .Title }}</h1>
         <div class="post-meta">
-            <span>// Date: {{ .Date.Format "2006-01-02" }}</span>
+            <span>{{ T "date_label" }}: {{ .Date.Format "2006-01-02" }}</span>
             <br>
-            <span>// Author: {{ site.Params.author.name }}</span>
+            <span>{{ T "author_label" }}: {{ site.Params.author.name }}</span>
             <br>
-            <span>// Reading Time: {{ .ReadingTime }} min</span>
+            <span>{{ T "read_time" .ReadingTime }}</span>
         </div>
     </header>
     <div class="content">{{ .Content }}</div>

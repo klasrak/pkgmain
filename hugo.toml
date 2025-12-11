@@ -2,17 +2,45 @@ baseURL = 'https://pkgmain.dev'
 languageCode = 'pt-br'
 title = 'package main_'
 theme = 'PkgView'
+defaultContentLanguage = 'pt'
+defaultContentLanguageInSubdir = true
 
 [module]
 [module.hugoVersion]
-min = "0.152.0" # Enforcing Hugo 152+ features
+min = "0.152.0"
 extended = true
 
+[languages]
+[languages.pt]
+languageName = 'PT'
+languageCode = 'pt-br'
+weight = 1
+title = 'package main_'
+[languages.pt.params]
+description = "Opiniões estaticamente tipadas."
+bio = "Eu não discuto, eu aborto o build."
+
+[languages.en]
+languageName = 'EN'
+languageCode = 'en-us'
+weight = 2
+title = 'package main_'
+[languages.en.params]
+description = "Statically typed opinions."
+bio = "I don't argue, I abort the build."
+
+[languages.es]
+languageName = 'ES'
+languageCode = 'es-es'
+weight = 3
+title = 'package main_'
+[languages.es.params]
+description = "Opiniones estáticamente tipadas."
+bio = "No discuto, aborto la compilación."
+
 [params]
-description = "Opiniões estaticamente tipadas e compiladas nativamente."
 keywords = ["Go", "Golang", "programação", "backend", "software", "blog"]
 
-[author]
+[params.author]
 name = "The Compiler"
 email = "sigkill@pkgmain.dev"
-bio = "Eu não discuto, eu aborto o build."
